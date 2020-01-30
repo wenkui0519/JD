@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播</title>
+    <link rel="stylesheet" href="./swiper.css">
+    <style>
+    .demo1 {
+      width: 500px;
+      height: 400px;
+      border: 1px solid #000;
+      margin: 0 auto;
+    }
+    .item {
+      height: 300px;
+    }
+    .item1 {
+      background-color: aqua;
+    }
+    .item2 {
+      background-color: salmon;
+    }
+    .item3 {
+      background-color: chartreuse;
+    }
+    .item4 {
+      background-color: aqua;
+    }
+    .item5 {
+      background-color: salmon;
+    }
+
+    .demo2 {
+      width: 300px;
+      height: 200px;
+      border: 1px solid #f00;
+    }
+    .demo2 img  {
+      width: 100%;
+      height: 100%;
+    }
+    .demo3 {
+      margin: 0 auto;
+      width: 190px;
+      height: 470px;
+      border: 1px solid #f00;
+    }
+    .demo3 .item-img{
+      height: 470px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .demo3 .item-img img{
+      flex: 0 1 auto;
+      height: 32%;
+    }
+    </style>
+</head>
+<body>
+    <div class="demo1">
+        <div class="item item1">1item1</div>
+        <div class="item item2">2item2</div>
+        <div class="item item3">3item3</div>
+        <div class="item item4">4item4</div>
+        <div class="item item5">5item5</div>
+    </div>
+
+    <div class="demo2">
+      <img src="./image/pic1.jpg" alt="">
+      <img src="./image/pic2.jpg" alt="">
+      <img src="./image/pic3.jpg" alt="">
+    </div>
+
+    <div class="demo3">
+      <div class="item-img">
+        <img src="./image/pic1.jpg" alt="">
+        <img src="./image/pic2.jpg" alt="">
+        <img src="./image/pic3.jpg" alt="">
+      </div>
+      <div class="item-img">
+        <img src="./image/pic1.jpg" alt="">
+        <img src="./image/pic2.jpg" alt="">
+        <img src="./image/pic3.jpg" alt="">
+      </div>
+      <div class="item-img">
+        <img src="./image/4.png" alt="">
+        <img src="./image/pic2.jpg" alt="">
+        <img src="./image/pic3.jpg" alt="">
+      </div>
+    </div>
+
+    <script src="./jquery-3.3.1.js"></script>
+    <script src="./swiper.js"></script>
+    <script>
+        $('.demo1').swiper({
+            items: $('.item'),
+            width:500,
+            height:400, 
+            type: 'fade',
+            trigger: 'mouseenter',
+            arrow:'always',
+            //btn相关
+            showArrowBtn:true,
+            showSpot:true,
+            spotPosition:'center',
+        })
+        $('.demo2').swiper({
+          items: $('.demo2 > img'),
+          showArrowBtn: true,
+          spotPosition: 'left',
+          showSpotBtn: true,
+          type: 'animate',
+          width: 300,
+          height: 200
+        })
+        $('.demo3').swiper({
+          items: $('.demo3 .item-img'),
+          showArrowBtn: true,
+          showSpotBtn: false,
+          type: 'animate',
+          width: 190,
+          height: 470
+        })
+        console.log($('.demo3 .item-img'))
+    </script>
+</body>
+</html>
